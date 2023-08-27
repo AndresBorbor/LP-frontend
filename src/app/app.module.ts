@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FiltradoComponent } from './filtrado/filtrado.component';
+import { RutasComponent } from './rutas/rutas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FiltradoComponent
+    FiltradoComponent,
+    RutasComponent
   ],
   imports: [
     BrowserModule,
