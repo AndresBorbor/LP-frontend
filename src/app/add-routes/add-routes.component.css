@@ -1,0 +1,59 @@
+.body{
+    background-color: aqua;
+}
+
+.container {
+    width: 500px;
+    margin: 0 auto;
+  }
+
+.boxStyle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(220, 220, 220);
+    border-radius: 30px;
+}
+.inputName{
+    margin-top: 3%;
+    background-color: rgb(160, 160, 160);
+    border-radius: 30px;
+}
+h1 {
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.places-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.divList{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.places-list li {
+    margin-bottom: 5px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
