@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { FiltradoComponent } from './filtrado/filtrado.component';
 import { RutasComponent } from './rutas/rutas.component';
 import { AddRoutesComponent } from './add-routes/add-routes.component';
+import { RutasRegistroComponent } from './rutas-registro/rutas-registro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FiltradoComponent,
     RutasComponent,
-    AddRoutesComponent
+    AddRoutesComponent,
+    RutasRegistroComponent
   ],
   imports: [
     BrowserModule,
