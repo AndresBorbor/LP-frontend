@@ -1,48 +1,5 @@
-body {
-    background-color: #7CAECA;
-    margin: 0;
+.a{
+    background-color: red;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 960px; /* Agregado para controlar el ancho máximo */
-    margin: 0 auto; /* Centrar la galería en la página */
-  }
-
-  .image-container {
-    background-color: black;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    color: white;
-  }
-
-  .image-container img {
-    max-width: 100%;
-    border-radius: 5px;
-  }
-
-  .like-dislike {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-  }
-
-  .icon {
-    display: flex;
-    align-items: center;
-  }
-
-  .icon img {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-  }
+    margin: 0;
+}
