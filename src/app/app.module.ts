@@ -7,6 +7,14 @@ import { FiltradoComponent } from './filtrado/filtrado.component';
 import { RutasComponent } from './rutas/rutas.component';
 import { AddRoutesComponent } from './add-routes/add-routes.component';
 import { RutasRegistroComponent } from './rutas-registro/rutas-registro.component';
+import { MenuComponent } from './menu/menu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -14,11 +22,19 @@ import { RutasRegistroComponent } from './rutas-registro/rutas-registro.componen
     FiltradoComponent,
     RutasComponent,
     AddRoutesComponent,
-    RutasRegistroComponent
+    RutasRegistroComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatCardModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
