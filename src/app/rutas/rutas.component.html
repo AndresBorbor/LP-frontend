@@ -11,11 +11,11 @@
             
             <div class="like-dislike">
                 <div class="icon">
-                    <img src="/assets/like_white.png" alt="Like" class="like_icon" (click)='like()'>
+                    <img [src]="likeImage" alt="Like" class="like_icon" (click)='like()'>
                     <span>{{ruta.likes}}</span>
                 </div>
                 <div class="icon">
-                    <img src="{{image}}" alt="Dislike" class="dislike_icon" (click) = 'dislike()'>
+                    <img [src]="disLikeImage" alt="Dislike" class="dislike_icon" (click) = 'dislike()'>
                     <span>{{ruta.no_recomendado}}</span>
                 </div>
             </div>

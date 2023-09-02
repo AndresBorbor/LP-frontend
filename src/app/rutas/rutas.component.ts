@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Ruta } from '../interfaces/ruta';
 import { RutasserviceService } from '../services/rutasservice.service';
+import { UserRoute } from '../interfaces/user-route';
 
 @Component({
   selector: 'app-rutas',
@@ -9,43 +10,28 @@ import { RutasserviceService } from '../services/rutasservice.service';
 })
 export class RutasComponent {
   likeImage = '/assets/like.png';
-  image = '/assets/dislike.png';
+  disLikeImage = '/assets/dislike_white.png';
+  public user:string = 'Andres';
   public rutas:Ruta[] = [];
+  public likedRoutes:UserRoute[] = [];
   constructor(private dataProvider:RutasserviceService){}
   ngOnInit(){
-    this.dataProvider.getResponse().subscribe(response => {
-      this.rutas = (response as Ruta[]);
-      console.log(this.rutas);
+    this.dataProvider.getLikedRespone().subscribe(response => {
+      this.likedRoutes = (response as UserRoute[]);
     })
+    this.dataProvider.getResponse().subscribe(response => {
+      let responseRutas = (response as Ruta[])
+      for(let likedRoute of this.likedRoutes){
+        for(let ruta of responseRutas){
+          if(ruta['nombre'] === likedRoute['ruta'] && likedRoute['usuario'] === this.user) this.rutas.push(ruta);
+        }
+      }
+    })
+    
   }
-  data:Ruta[] = [{
-    nombre:'Ruta Guayarte',
-    tiempo: '25min',
-    valoracion:4.0,
-    dinero: 100,
-    likes:20,
-    no_recomendado: 15,
-  },{
-    nombre:'Ruta ceibos',
-    tiempo: '25min',
-    valoracion:4.0,
-    dinero: 250,
-    likes:32,
-    no_recomendado: 7,
-  },{
-    nombre:'Ruta Urdesa',
-    tiempo: '30min',
-    valoracion:4.0,
-    dinero: 400,
-    likes:40,
-    no_recomendado: 14,
-  }]
-
-
   
   like(){
-      console.log("like");
-    
+      this.likeImage = '/assets/like_white.png';
   }
 
   dislike(){

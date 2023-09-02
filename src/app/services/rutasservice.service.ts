@@ -7,10 +7,15 @@ import { Ruta } from '../interfaces/ruta';
 })
 export class RutasserviceService {
   private URL:string = 'http://localhost:4567/api/rutas'
+  private likedURL:string = 'http://localhost:4567/api/users_routes'
 
   constructor(private http:HttpClient) { }
 
   getResponse(){
     return this.http.get(this.URL);
+  }
+
+  getLikedRespone(){
+    return this.http.get(this.likedURL);
   }
 }
