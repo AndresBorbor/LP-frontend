@@ -23,7 +23,10 @@
   margin: 0 auto;
   min-height: 70vh;
 }
-
+.route-name{
+  width: 100%;
+  font-size: 1.2rem;
+}
 .image-container {
   background-color: black;
   padding: 2rem;
@@ -40,8 +43,7 @@
 
 .like-dislike {
   display: flex;
-  justify-content: flex-end;
-  gap: 0 .5rem;
+  justify-content: space-evenly;
   align-items: center;
   margin-top: 10px;
 }
@@ -49,11 +51,12 @@
 .icon {
   display: flex;
   align-items: center;
+  font-size: 1.2rem;
 }
 
 .icon img {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   margin-right: 5px;
   cursor: pointer;
 }
