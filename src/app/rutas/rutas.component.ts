@@ -15,6 +15,7 @@ export class RutasComponent {
   ngOnInit(){
     this.dataProvider.getResponse().subscribe(response => {
       this.rutas = (response as Ruta[]);
+      console.log(this.rutas);
     })
   }
   data:Ruta[] = [{

@@ -2,21 +2,21 @@
     <h1>Rutas turísticas</h1>
     <div class="gallery">
         
-        <div class="image-container" *ngFor='let ruta of data'>
+        <div class="image-container" *ngFor='let ruta of rutas'>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15947.83581451204!2d-79.94203285890663!3d-2.1693116034664643!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d7215755970cb%3A0x8bc2d7437c505a6a!2sMcDonald&#39;s!5e0!3m2!1ses!2sec!4v1693169283237!5m2!1ses!2sec"
                 width="100%" height="80%" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div class="like-dislike">
                 <span>{{ruta.nombre}}</span>
-                <div class="icon">
+                <!-- <div class="icon">
                     <img src="/assets/like_white.png" alt="Like" class="like_icon" (click)='like()'>
                     <span>{{ruta.likes}}</span>
                 </div>
                 <div class="icon">
                     <img src="{{image}}" alt="Dislike" class="dislike_icon" (click) = 'dislike()'>
                     <span>{{ruta.no_recomendado}}</span>
-                </div>
+                </div> -->
             </div>
         </div>
         
