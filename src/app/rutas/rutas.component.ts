@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Ruta } from '../interfaces/ruta';
+import { RutasserviceService } from '../services/rutasservice.service';
 
 @Component({
   selector: 'app-rutas',
@@ -9,6 +10,13 @@ import { Ruta } from '../interfaces/ruta';
 export class RutasComponent {
   likeImage = '/assets/like.png';
   image = '/assets/dislike.png';
+  public rutas:Ruta[] = [];
+  constructor(private dataProvider:RutasserviceService){}
+  ngOnInit(){
+    this.dataProvider.getResponse().subscribe(response => {
+      this.rutas = (response as Ruta[]);
+    })
+  }
   data:Ruta[] = [{
     nombre:'Ruta Guayarte',
     tiempo: '25min',
@@ -33,6 +41,7 @@ export class RutasComponent {
   }]
 
 
+  
   like(){
       console.log("like");
     
