@@ -1,5 +1,15 @@
 <div class="body">
     <h1>Rutas turísticas</h1>
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" class="userSelect">
+        <mat-form-field>
+            <mat-label>Usuarios</mat-label>
+            <mat-select [formControl]="userSelect" (selectionChange)="selection($event.value)">
+                <mat-option *ngFor="let user of userList" [value]="user" >
+                    {{user}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
     <div class="gallery">
         
         <div class="image-container" *ngFor='let ruta of routes'>

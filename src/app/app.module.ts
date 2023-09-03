@@ -21,7 +21,6 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     FiltradoComponent,
-    RutasComponent,
     AddRoutesComponent,
     RutasRegistroComponent,
     MenuComponent
@@ -35,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatToolbarModule,
     MatCardModule,
-    HttpClientModule
+    RutasComponent,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
