@@ -8,6 +8,7 @@ import { Ruta } from '../interfaces/ruta';
 export class RutasserviceService {
   private URL:string = 'http://localhost:4567/api/rutas'
   private likedURL:string = 'http://localhost:4567/api/users_routes'
+  private deleteLikedRoute:string = `http://localhost:4567/api/users_routes/`
 
   constructor(private http:HttpClient) { }
 
@@ -17,5 +18,10 @@ export class RutasserviceService {
 
   getLikedRespone(){
     return this.http.get(this.likedURL);
+  }
+
+  deleteLikedRecord(route:Ruta, user:string){
+    let url = this.deleteLikedRoute+user+"/"+route.nombre;
+    return this.http.delete(url);
   }
 }

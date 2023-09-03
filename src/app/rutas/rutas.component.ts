@@ -12,29 +12,34 @@ export class RutasComponent {
   likeImage = '/assets/like.png';
   disLikeImage = '/assets/dislike_white.png';
   public user:string = 'Andres';
-  public rutas:Ruta[] = [];
-  public likedRoutes:UserRoute[] = [];
+  public routes:Ruta[] = [];
+  // public likedRoutes:UserRoute[] = [];
+
   constructor(private dataProvider:RutasserviceService){}
   ngOnInit(){
-    this.dataProvider.getLikedRespone().subscribe(response => {
-      this.likedRoutes = (response as UserRoute[]);
-    })
-    this.dataProvider.getResponse().subscribe(response => {
-      let responseRutas = (response as Ruta[])
-      for(let likedRoute of this.likedRoutes){
-        for(let ruta of responseRutas){
-          if(ruta['nombre'] === likedRoute['ruta'] && likedRoute['usuario'] === this.user) this.rutas.push(ruta);
-        }
-      }
-    })
-    
+    this.loadLikedRoutes();
   }
   
-  like(){
-      this.likeImage = '/assets/like_white.png';
+  loadLikedRoutes(){
+    this.dataProvider.getLikedRespone().subscribe(response => {
+      const likedRoutes = (response as UserRoute[]);
+      this.loadRoutes(likedRoutes);
+    })
   }
 
-  dislike(){
-    console.log('dislike');
+  loadRoutes(likedRoutes:UserRoute[]){
+    this.dataProvider.getResponse().subscribe(response => {
+      let responseRoutes = (response as Ruta[])
+      const userRoutes = (likedRoutes.filter(likedRoute => likedRoute.usuario === this.user)).map(route => route.ruta);
+      this.routes = responseRoutes.filter(route => userRoutes.includes(route.nombre));
+    })
+  }
+
+  dislike(ruta:Ruta){
+    this.dataProvider.deleteLikedRecord(ruta, this.user).subscribe(response => {this.loadLikedRoutes()});
+  }
+
+  notRecommend(){
+    console.log('notRecommend');
   }
 }
