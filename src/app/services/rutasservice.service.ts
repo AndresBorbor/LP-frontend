@@ -9,9 +9,12 @@ export class RutasserviceService {
   private URL:string = 'http://localhost:4567/api/rutas'
   private likedURL:string = 'http://localhost:4567/api/users_routes'
   private deleteLikedRoute:string = `http://localhost:4567/api/users_routes/`
+  private createRute: string = 'http://localhost:4567/api/rutas';
+
 
   constructor(private http:HttpClient) { }
 
+  
   getResponse(){
     return this.http.get(this.URL);
   }
@@ -23,5 +26,16 @@ export class RutasserviceService {
   deleteLikedRecord(route:Ruta, user:string){
     let url = this.deleteLikedRoute+user+"/"+route.nombre;
     return this.http.delete(url);
+  }
+
+  addRoute(routeName: string, places: string[]) {
+    const data = {
+      nombre: routeName,
+      lugares: places,
+      likes: 0,
+      no_recomendado: 0,
+    };
+
+    return this.http.post(`${this.createRute}/ruta`, data);
   }
 }

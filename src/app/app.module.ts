@@ -16,6 +16,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     FiltradoComponent,
     AddRoutesComponent,
     RutasRegistroComponent,
-    MenuComponent
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     RutasComponent,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

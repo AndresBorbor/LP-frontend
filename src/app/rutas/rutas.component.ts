@@ -6,6 +6,7 @@ import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgIf, NgFor} from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+
 @Component({
   selector: 'app-rutas',
   templateUrl: './rutas.component.html',
@@ -13,6 +14,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   standalone: true,
   imports: [MatFormFieldModule, MatSelectModule, FormsModule, ReactiveFormsModule, NgIf, NgFor],
 })
+
 export class RutasComponent {
   likeImage = '/assets/like.png';
   disLikeImage = '/assets/dislike_white.png';
