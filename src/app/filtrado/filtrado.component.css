@@ -40,6 +40,7 @@ body {
     padding: 10px;
     text-align: center;
     border-bottom: 1px solid #444;
+    color: black;
   }
 
   .dropdown:hover .dropdown-list {
