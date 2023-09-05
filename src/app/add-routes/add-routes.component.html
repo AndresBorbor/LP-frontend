@@ -1,3 +1,5 @@
+<link href="https://fonts.cdnfonts.com/css/product-sans" rel="stylesheet">
+
 <div class="body">
   <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" class="userSelect">
     <mat-form-field>
@@ -14,20 +16,22 @@
       <h1>Agregar ruta recomendada</h1>
     </div>
     <form [formGroup]="routeForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <input type="text" class="form-control" id="route-name" formControlName="routeName" placeholder='Nombre de ruta'>
-      </div>
-      <div class="boxStyle">
-        <div>
-          <input type="text" class="inputName" formControlName="newPlace" placeholder="Escriba el nombre del lugar">
-          <button type="button" class="inputName" (click)="agregarLugar()">+</button>
+      <div class="containerform">
+        <div class="form-group">
+          <input type="text" class="form-control" id="route-name" formControlName="routeName" placeholder="Nombre de ruta">
         </div>
+        
+        <div class="form-container">
+          <input type="text" class="inputName" formControlName="newPlace" placeholder="Escriba el nombre del lugar">
+          <button type="button" class="button" (click)="agregarLugar()">+</button>
+        </div>
+      </div>
         <div class="divList">
           <ul class="places-list">
             <li *ngFor="let place of places">{{ place }}</li>
           </ul>
         </div>
-      </div>
+      
       <div style="display: flex; justify-content: center;">
         <button type="submit" class="btn btn-primary">Agregar</button>
       </div>
