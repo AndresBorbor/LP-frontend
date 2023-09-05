@@ -12,6 +12,7 @@ export class RutasserviceService {
   private createRute: string = 'http://localhost:4567/api/rutas';
 
 
+
   constructor(private http:HttpClient) { }
 
   
@@ -37,5 +38,14 @@ export class RutasserviceService {
     };
 
     return this.http.post(`${this.createRute}`, data);
+  }
+  addUserRoute(routeName: string, user: string){
+
+    const data = {
+      usuario: user,
+      ruta: routeName
+    };
+
+    return this.http.post(`${this.likedURL}`, data);
   }
 }

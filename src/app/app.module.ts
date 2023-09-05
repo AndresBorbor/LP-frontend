@@ -24,7 +24,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     FiltradoComponent,
-    AddRoutesComponent,
     RutasRegistroComponent,
     MenuComponent,
   ],
@@ -40,7 +39,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     RutasComponent,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AddRoutesComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
