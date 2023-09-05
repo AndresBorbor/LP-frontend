@@ -36,6 +36,6 @@ export class RutasserviceService {
       no_recomendado: 0,
     };
 
-    return this.http.post(`${this.createRute}/ruta`, data);
+    return this.http.post(`${this.createRute}`, data);
   }
 }

@@ -29,9 +29,9 @@ export class AddRoutesComponent {
 
   onSubmit() {
     const routeName = this.routeForm.get('routeName')?.value;
-
+  
     if (routeName && this.places.length > 0) {
-      // Envía los datos al backend a través del servicio
+      // Envía los datos al backend como un arreglo de cadenas
       this.rutasserviceService.addRoute(routeName, this.places).subscribe(
         (response) => {
           console.log('Registro creado en el backend:', response);

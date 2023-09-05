@@ -3,7 +3,7 @@
     <div class="boxStyle">
       <h1>Agregar ruta recomendada</h1>
     </div>
-    <form [formGroup]="routeForm" (ngSubmit)="agregarLugar()">
+    <form [formGroup]="routeForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <input type="text" class="form-control" id="route-name" formControlName="routeName" placeholder='Nombre de ruta'>
       </div>
